@@ -38,15 +38,22 @@
       <div class="flex flex-row items-center gap-1">
         <img
           id="theme-toggle"
-          src="./assets/images/moon.png"
           alt="theme"
           style="width: 35px; height: 35px;background-color: white; border: 2px solid black; border-radius: 50%; margin-right: 8px; cursor: pointer;"
         />
+        <script>
+         const themeIcon = localStorage.getItem("theme")
+         if (themeIcon === "dark") {
+          document.getElementById("theme-toggle").src = "./assets/images/sun.png"
+         }else{
+          document.getElementById("theme-toggle").src = "./assets/images/moon.png"
+         }
+        </script>
 
         <button
           id="profile"
         >
-          <img src="./assets/images/profile2.png" alt="" style="width: 35px; height: 35px;background-color: white; border: 2px solid black; border-radius: 50%; margin-right: 8px; cursor: pointer; padding: 2px;">
+          <img src="./assets/images/profile1.png" alt="" style="width: 35px; height: 35px;background-color: white; border: 2px solid black; border-radius: 50%; margin-right: 8px; cursor: pointer; padding: 2px;">
         </button>
       </div>
     </header>
