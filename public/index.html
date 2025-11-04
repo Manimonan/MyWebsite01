@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/styles.css" />
+    <title>Home</title>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition"
+  >
+    <!-- Navbar -->
+    <header
+      class="sticky top-0 z-50 bg-white/90 dark:bg-gray-800/90 backdrop-blur shadow-md py-2 px-5 flex justify-between items-center"
+    >
+      <a href="./index.html">
+        <h1 class="text-2xl font-bold">My Website</h1>
+      </a>
+
+      <nav>
+        <a
+          href="./articles/article.html"
+          class="mr-4 nav-link font-semibold hover:underline"
+          >Article</a
+        >
+        <a
+          href="./Examination/examination.html"
+          class="mr-4 nav-link font-semibold hover:underline"
+          >Examinations</a
+        >
+        <a
+          href="./MCQs/mcq.html"
+          class="mr-4 nav-link font-semibold hover:underline"
+          >MCQ</a
+        >
+      </nav>
+
+      <div class="flex flex-row items-center gap-1">
+        <img
+          id="theme-toggle"
+          src="./assets/images/moon.png"
+          alt="theme"
+          style="width: 35px; height: 35px;background-color: white; border: 2px solid black; border-radius: 50%; margin-right: 8px; cursor: pointer;"
+        />
+
+        <button
+          id="profile"
+        >
+          <img src="./assets/images/profile2.png" alt="" style="width: 35px; height: 35px;background-color: white; border: 2px solid black; border-radius: 50%; margin-right: 8px; cursor: pointer; padding: 2px;">
+        </button>
+      </div>
+    </header>
+    <main class="p-4">
+      <!-- Hero section -->
+      <section
+        class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-8 items-center"
+      >
+        <div>
+          <h2 class="text-4xl font-bold mb-4">Welcome to My Website</h2>
+          <p class="mb-6">
+            Explore articles, examinations, and multiple-choice questions to
+            enhance your knowledge.
+          </p>
+          <a
+            href="./articles/article.html"
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >Get Started</a
+          >
+        </div>
+        <div>
+          <img
+            src="./assets/images/img6.png"
+            alt="Hero Image"
+            class="w-full rounded-lg shadow-lg"
+          />
+        </div>
+      </section>
+      <!-- Features Setion -->
+      <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+          <h3 class="text-3xl font-bold mb-12">What you get here</h3>
+          <div
+            class="p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md mb-8"
+          >
+            <h4 class="text-xl font-semibold mb-2">Article</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-50">
+              read and learn with well-structured notes and guides.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md mb-8"
+          >
+            <h4 class="text-xl font-semibold mb-2">Examinations</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-50">
+              Study material and prevvious years examinations papers.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-md mb-8"
+          >
+            <h4 class="text-xl font-semibold mb-2">MCQs Practice</h4>
+            <p class="text-sm text-gray-600 dark:text-gray-50">
+              Test your knowledge with interactive quizzes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="bg-gray-200 dark:bg-gray-800 text-center p-4">
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          &copy; 2024 My Website. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="../src/scripts.js"></script>
+  </body>
+</html>
