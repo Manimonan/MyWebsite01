@@ -1,0 +1,12 @@
+[
+  { "image": "assets/slider/img1.jpg", "caption": "Slide 1 - Learn & Grow" },
+  { "image": "assets/slider/img2.jpg", "caption": "Slide 2 - Build Your Career" },
+  { "image": "assets/slider/img3.jpg", "caption": "Slide 3 - Explore Knowledge" },
+  { "image": "assets/slider/img4.jpg", "caption": "Slide 4 - Achieve Success" },
+  { "image": "assets/slider/img5.jpg", "caption": "Slide 5 - Keep Moving" },
+  { "image": "assets/slider/img6.jpg", "caption": "Slide 6 - Work Smart" },
+  { "image": "assets/slider/img7.jpg", "caption": "Slide 7 - Stay Consistent" },
+  { "image": "assets/slider/img8.jpg", "caption": "Slide 8 - Push Forward" },
+  { "image": "assets/slider/img9.jpg", "caption": "Slide 9 - Never Stop" },
+  { "image": "assets/slider/img10.jpg", "caption": "Slide 10 - You Got This!" }
+]
