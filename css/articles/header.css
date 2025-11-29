@@ -1,0 +1,122 @@
+/* Light / Dark Variables */
+:root {
+  --hbg:#eff3d0;
+  --text: #222;
+  --border: #ddd;
+  --input-bg: #f3f3f3;
+}
+
+.dark {
+  --hbg: #434040;
+  --text: #eaeaea;
+  --border: #333;
+  --input-bg: #2a2a2a;
+}
+
+.page-header{
+  top: 0;
+  margin: 5px 100px;
+  padding: 30px;
+  text-align: center;
+  background:var(--hbg);
+  border:2px solid var(--border);
+  border-radius:10px ;
+}
+
+.header-text {
+  font-size: 1.6rem;
+  color:var(--text);
+  align-items: center;
+  padding-bottom: 40px;
+}
+/* ---------- Base Styles ---------- */
+.header-elements {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 15px;
+  background: var(--hbg);
+  color: var(--text);
+ 
+}
+
+
+
+/* ---------- Search Box ---------- */
+.search-box {
+  
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--input-bg);
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  transition: 0.3s ease;
+}
+
+.search-box svg {
+  color: var(--text);
+}
+
+.search-box:focus-within {
+  border-color: #4b7bec;
+  box-shadow: 0 0 0 3px rgba(75, 123, 236, 0.3);
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 180px;
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* ---------- Category Filter ---------- */
+#categoryFilter {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#categoryFilter:hover {
+  border-color: #4b7bec;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .header-elements {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  #categoryFilter {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-box {
+    padding: 7px 10px;
+  }
+  
+  .search-box input {
+    font-size: 14px;
+  }
+
+  #categoryFilter {
+    font-size: 14px;
+  }
+}

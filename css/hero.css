@@ -1,0 +1,129 @@
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left p:first-child {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero-left span {
+  color: #007bff;
+  margin-left: 100px;
+}
+
+.hero-left p:nth-child(2) {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* Social Section */
+.social-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.social-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.social-list li {
+  text-align: center;
+}
+
+.social-list a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.social-list a:hover {
+  transform: translateY(-8px); /* Moves upward */
+}
+
+.social-list img {
+  width: 50px;
+  height: 50px;
+}
+
+.social-list p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* HERO RIGHT */
+.hero-right img {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* ===========DARK MODE SUPPORT ============== */
+
+body.dark {
+  background: #121212;
+  color: #ffffff;
+}
+
+/* Hero section text */
+body.dark .hero-left p:first-child {
+  color: #ffffff;
+}
+
+body.dark .hero-left span {
+  color: #4da3ff; /* Accent color in dark mode */
+}
+
+body.dark .hero-left p:nth-child(2) {
+  color: #cccccc;
+}
+
+/* Social icons + labels */
+body.dark .social-list a {
+  color: #e6e6e6;
+}
+
+body.dark .social-title {
+  color: #e6e6e6;
+}
+
+body.dark .social-list img {
+  filter: brightness(0.8); /* Slight dark mode adjustment */
+}
+
+body.dark .social-list a:hover {
+  transform: translateY(-8px);
+  filter: brightness(1);
+}
+
+/* On mobile (no changes needed, inheritance works) */
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-list {
+    justify-content: center;
+  }
+}
+
+

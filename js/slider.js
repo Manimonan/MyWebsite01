@@ -1,4 +1,3 @@
-
 const slider = document.getElementById("slider");
 const dotsContainer = document.getElementById("dotsContainer");
 
@@ -10,8 +9,8 @@ let startX = 0;
 /* Load JSON Slide Data */
 const dataUrl = "assets/sliderData/data.json";
 fetch(dataUrl)
-  .then(res => res.json())
-  .then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     slides = data;
     createSlides();
     startSlider();
@@ -19,16 +18,24 @@ fetch(dataUrl)
 
 /* Create Slides + Dots */
 function createSlides() {
-  slides.forEach((item, index) => {
+  slider.innerHTML = "";
+  dotsContainer.innerHTML = "";
+  latestSlides = slides.slice(-10);
+
+  latestSlides.forEach((item, index) => {
     slider.innerHTML += `
+     <a href="description.html?topic=${item.caption}" class="slider-link" >
       <div class="slide${index === 0 ? " active" : ""}">
         <img src="${item.image}" />
         <div class="caption">${item.caption}</div>
       </div>
+      </a>
     `;
 
     dotsContainer.innerHTML += `
-      <div class="dot ${index === 0 ? "active" : ""}" onclick="goToSlide(${index})"></div>
+      <div class="dot ${
+        index === 0 ? "active" : ""
+      }" onclick="goToSlide(${index})"></div>
     `;
   });
 }
@@ -38,8 +45,8 @@ function goToSlide(index) {
   let slideElements = document.querySelectorAll(".slide");
   let dots = document.querySelectorAll(".dot");
 
-  slideElements.forEach(s => s.classList.remove("active"));
-  dots.forEach(d => d.classList.remove("active"));
+  slideElements.forEach((s) => s.classList.remove("active"));
+  dots.forEach((d) => d.classList.remove("active"));
 
   slideElements[index].classList.add("active");
   dots[index].classList.add("active");
@@ -50,7 +57,7 @@ function goToSlide(index) {
 /* Auto-play */
 function startSlider() {
   autoPlayInterval = setInterval(() => {
-    currentIndex = (currentIndex + 1) % slides.length;
+    currentIndex = (currentIndex + 1) % latestSlides.length;
     goToSlide(currentIndex);
   }, 3000); // 3 sec per slide
 }

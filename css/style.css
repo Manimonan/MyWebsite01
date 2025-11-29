@@ -3,15 +3,32 @@
 
 body {
   font-family: Arial, sans-serif;
-  transition: background 0.3s, color 0.3s;
+  transition: background ,0.3s, color 0.3s;
 }
+
+/* Light / Dark Variables */
+:root {
+  --bg:#ffffff;
+  --text: #222;
+  --border: #ddd;
+  --input-bg: #f3f3f3;
+  --hover: #007bff;
+}
+
+.dark {
+  --bg: #1d1d1d;
+  --text: #eaeaea;
+  --border: #333;
+  --input-bg: #2a2a2a;
+}
+
 
 /* NAVBAR */
 .navbar {
   width: 100%;
   padding: 12px 25px;
-  background: #ffffff;
-  border-bottom: 1px solid #ddd;
+  background:var(--bg) ;
+  border-bottom: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,19 +37,14 @@ body {
   z-index: 999;
 }
 
-body.dark .navbar {
-  background: #1a1a1a;
-  border-bottom-color: #444;
-}
+
 
 .home-btn {
   font-size: 22px;
   text-decoration: none;
   font-weight: bold;
-  color: #333;
+  color: var(--text);
 }
-
-body.dark .home-btn { color: white; }
 
 /* Center Menu */
 .nav-menu {
@@ -43,17 +55,16 @@ body.dark .home-btn { color: white; }
 
 .nav-menu a {
   text-decoration: none;
-  color: #333;
+  color:var(--text);
   font-size: 18px;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .nav-menu a:hover {
-  color: #007bff;
+  color:var(--hover);
 }
 
-body.dark .nav-menu a { color: white; }
 
 /* Right section */
 .nav-right {
@@ -88,7 +99,7 @@ body.dark .nav-menu a { color: white; }
   position: absolute;
   right: 0;
   top: 48px;
-  background: white;
+  background:var(--bg);
   width: 150px;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
@@ -96,28 +107,33 @@ body.dark .nav-menu a { color: white; }
   animation: fadeIn 0.2s ease;
 }
 
-body.dark .profile-dropdown {
-  background: #2a2a2a;
-}
 
 .profile-dropdown a {
   display: block;
   padding: 10px 14px;
   text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #eee;
+  color:var(--text);
+  border-bottom: 1px solid var(--border);
 }
 
-body.dark .profile-dropdown a {
-  color: white;
-  border-bottom-color: #444;
-}
 
 .profile-dropdown a:last-child {
   border: none;
 }
 
 .profile-dropdown .logout { color: red; }
+
+/* Active underline */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #4b7bec; /* underline color */
+  border-radius: 2px;
+}
 
 /* Animation */
 @keyframes fadeIn {
@@ -141,7 +157,7 @@ body.dark .profile-dropdown a {
     top: 70px;
     right: 0;
     width: 200px;
-    background: white;
+    background: var(--bg);
     flex-direction: column;
     display: none;
     border-radius: 10px;
@@ -149,236 +165,18 @@ body.dark .profile-dropdown a {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
-  body.dark .nav-menu {
-    background: #2a2a2a;
-  }
-
   .hamburger {
     display: block;
   }
 }
 
-/* HERO SECTION */
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px 40px;
-  gap: 40px;
+/* Common css */
+body{
+  background: var(--bg);
+  color: var(--text);
 }
+.section{
+  padding: 20px;
+  padding-bottom: 30px;
 
-.hero-left {
-  flex: 1;
-}
-
-.hero-left p:first-child {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.hero-left span {
-  color: #007bff;
-  margin-left: 100px;
-}
-
-.hero-left p:nth-child(2) {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 25px;
-}
-
-/* Social Section */
-.social-title {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.social-list {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  padding: 0;
-}
-
-.social-list li {
-  text-align: center;
-}
-
-.social-list a {
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-
-.social-list a:hover {
-  transform: translateY(-8px); /* Moves upward */
-}
-
-.social-list img {
-  width: 50px;
-  height: 50px;
-}
-
-.social-list p {
-  margin-top: 6px;
-  font-size: 14px;
-}
-
-/* HERO RIGHT */
-.hero-right img {
-  width: 100%;
-  max-width: 480px;
-}
-
-/* ===========DARK MODE SUPPORT ============== */
-
-body.dark {
-  background: #121212;
-  color: #ffffff;
-}
-
-/* Hero section text */
-body.dark .hero-left p:first-child {
-  color: #ffffff;
-}
-
-body.dark .hero-left span {
-  color: #4da3ff; /* Accent color in dark mode */
-}
-
-body.dark .hero-left p:nth-child(2) {
-  color: #cccccc;
-}
-
-/* Social icons + labels */
-body.dark .social-list a {
-  color: #e6e6e6;
-}
-
-body.dark .social-title {
-  color: #e6e6e6;
-}
-
-body.dark .social-list img {
-  filter: brightness(0.8); /* Slight dark mode adjustment */
-}
-
-body.dark .social-list a:hover {
-  transform: translateY(-8px);
-  filter: brightness(1);
-}
-
-/* On mobile (no changes needed, inheritance works) */
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-list {
-    justify-content: center;
-  }
-}
-
-
-/* Container */
-.slider-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: 250px;
-  margin: auto ;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* Each Slide */
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.slide.active {
-  opacity: 1;
-}
-
-/* Slide Image */
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Caption */
-.caption {
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: rgba(0,0,0,0.45);
-  color: white;
-  font-size: 1.1rem;
-}
-
-/* Indicators (dots) */
-.dots {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  background: #bbb;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.dot.active {
-  background: #fff;
-  transform: scale(1.2);
-}
-
-/* Dark Mode Support */
-.dark .slider-container {
-  box-shadow: 0 4px 15px rgba(255,255,255,0.1);
-}
-
-.dark .caption {
-  background: rgba(255,255,255,0.2);
-  color: #fff;
-}
-
-.dark .dot {
-  background: #666;
-}
-
-.dark .dot.active {
-  background: #fff;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .slider-container {
-    height: 300px;
-  }
-  .caption {
-    font-size: 0.9rem;
-  }
 }

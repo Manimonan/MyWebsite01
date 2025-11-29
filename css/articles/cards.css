@@ -1,0 +1,150 @@
+:root {
+  --text: #222;
+  --card-bg: #fff;
+  --cborder: #ddd;
+}
+
+.dark {
+  --text: #eee;
+  --card-bg: #585555;
+  --cborder: #444;
+}
+
+/* ---------- CARD GRID ---------- */
+
+/* Cards Container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* makes the whole card clickable */
+}
+/* Single Card */
+.cards {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--cborder);
+}
+
+/* Hover Effect */
+.cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+/* Image Styling */
+.cards .card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.cards h3 {
+  font-size: 1.2rem;
+  color:var(--text);
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
+/* Description */
+.cards p {
+  font-size: 0.95rem;
+  color:var(--text);
+  line-height: 1.4rem;
+}
+
+/* Dark Mode Support
+body.dark-mode .cards {
+  background: #1f1f1f;
+  border-color: #333;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .cards h3 {
+  color: #f1f1f1;
+}
+
+body.dark-mode .cards p {
+  color: #bbbbbb;
+} */
+/* Large screen (4 cards) */
+@media (min-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Medium screen (3 cards) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small-medium (2 cards) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screen (1 card) */
+@media (max-width: 575px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- PAGINATION ---------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.pagination button {
+  font-size: medium;
+  padding: 12px 20px;
+  border: none;
+  background: #4b7bec;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #222;
+}
+
+.pagination button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+/* ---------- JUMP BOX ---------- */
+.jump-box {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  gap: 10px;
+}
+
+.jump-box select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--cborder);
+}

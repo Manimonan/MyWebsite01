@@ -1,0 +1,53 @@
+
+/* Container */
+.exam-container {
+  max-width: 95%;
+  margin: auto;
+  padding-top: 50px;
+}
+
+/* Header */
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px ;
+  border: solid 2px #333;
+  border-radius: 10px;
+}
+
+/* Dropdown */
+#monthFilter {
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #f5f5f5;
+  color:#242424 ;
+}
+
+/* Exam Card */
+.exam-card {
+  background: #ffffff;
+  border: 1px solid  #dddddd;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.exam-card:hover {
+  transform: translateY(-2px);
+}
+
+.exam-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.exam-date {
+  margin-top: 4px;
+  color: gray;
+  font-size: 14px;
+}

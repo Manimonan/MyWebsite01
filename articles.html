@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/articles/header.css" />
+    <link rel="stylesheet" href="./css/articles/cards.css" />
+    <title>Articles Page</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- Left: Home -->
+      <div class="nav-left">
+        <a href="/index.html" class="home-btn">Home</a>
+      </div>
+
+      <!-- Center: Menus -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="articles.html" class=".nav-link">Articles</a></li>
+        <li><a href="examinations.html" class=".nav-link">Examinations</a></li>
+        <li><a href="mcqs.html" class=".nav-link">MCQs</a></li>
+      </ul>
+
+      <!-- Right side buttons -->
+      <div class="nav-right">
+        <!-- Theme toggle -->
+        <button id="themeToggle" class="theme-btn">🌓</button>
+
+        <!-- Profile dropdown -->
+        <div class="profile-container">
+          <img
+            src="../assets/images/profile1.png"
+            class="profile-icon"
+            id="profileBtn"
+          />
+          <div class="profile-dropdown" id="profileDropdown">
+            <a href="#">My Account</a>
+            <a href="#">Settings</a>
+            <a href="#" class="logout">Logout</a>
+          </div>
+        </div>
+
+        <!-- Hamburger (mobile) -->
+        <button id="hamburger" class="hamburger">☰</button>
+      </div>
+    </nav>
+    <main>
+      <div class="page-header">
+        <h3 class="header-text">
+          Explore our collection of insightful articles covering the latest
+          Trends, Innovations, Biodiversity, Engineering and export perspectives
+          across diverse topics.
+        </h3>
+        <div class="header-elements">
+          <!-- Search -->
+
+          <div class="search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+              <path
+                d="M21 21l-4.35-4.35"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <circle
+                cx="11"
+                cy="11"
+                r="6"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+            </svg>
+            <input type="text" id="searchInput" placeholder="Search..." />
+          </div>
+
+          <!-- Category Filter -->
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="programming">Programming</option>
+            <option value="networking">Networking</option>
+            <option value="basics">Basics</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Article title cards -->
+      <div>
+        <!-- Card Container -->
+        <div class="cards-container" id="cardContainer"></div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </main>
+  </body>
+  <script src="./js/main.js"></script>
+  <script>
+    // cards detiels
+    const cardsPerPage = 24;
+    let currentPage = 1;
+    let cards = [];
+
+    const cardContainer = document.getElementById("cardContainer");
+    const pagination = document.getElementById("pagination");
+
+    //  Load json file
+    const dataUrl = "assets/sliderData/data.json";
+    fetch(dataUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        cards = data;
+        renderCards(currentPage);
+        setupPagination();
+      });
+
+    // Render cards
+
+    function renderCards(currentPage) {
+      cardContainer.innerHTML = "";
+      const start = (currentPage - 1) * cardsPerPage;
+      const end = start + cardsPerPage;
+
+      cards.slice(start, end).forEach((item) => {
+        cardContainer.innerHTML += `
+        <div class="cards-container">
+          <a href="description.html?topic=${item.caption}" class="card-link" >
+          <div class="cards">
+           <img src="${item.image}" alt="card's Image" class="card-image" />
+           <h3>${item.caption}</h3>
+           <p>${item.description}</p>
+          </div>
+          </a>
+        </div>
+        `;
+      });
+    }
+    // --------------------- PAGINATION BUTTONS ---------------------
+    function setupPagination() {
+      pagination.innerHTML = "";
+      const pageCount = Math.ceil(cards.length / cardsPerPage);
+
+      // Previous Button
+      const prevBtn = document.createElement("button");
+      prevBtn.innerText = "Prev";
+      prevBtn.onclick = () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderCards(currentPage);
+          setupPagination();
+        }
+      };
+      pagination.appendChild(prevBtn);
+
+      // Page Number Buttons
+      for (let i = 1; i <= pageCount; i++) {
+        const btn = document.createElement("button");
+        btn.innerText = i;
+
+        if (i === currentPage) btn.classList.add("active");
+
+        btn.onclick = () => {
+          currentPage = i;
+          renderCards(currentPage);
+          setupPagination();
+        };
+
+        pagination.appendChild(btn);
+      }
+
+      // Next Button
+      const nextBtn = document.createElement("button");
+      nextBtn.innerText = "Next";
+      nextBtn.onclick = () => {
+        if (currentPage < pageCount) {
+          currentPage++;
+          renderCards(currentPage);
+          setupPagination();
+        }
+      };
+      pagination.appendChild(nextBtn);
+    }
+
+    // --------------------- INITIAL CALLS ---------------------
+    
+  </script>
+</html>

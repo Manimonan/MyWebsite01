@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/slider.css" />
+    <link rel="stylesheet" href="./css/hero.css" />
+    <link rel="stylesheet" href="./css/exam.css" />
+    <link rel="stylesheet" href="./css/footer.css">
     <title>home page</title>
   </head>
   <body>
@@ -15,9 +19,9 @@
 
       <!-- Center: Menus -->
       <ul class="nav-menu" id="navMenu">
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="examinations.html">Examinations</a></li>
-        <li><a href="mcqs.html">MCQs</a></li>
+        <li><a href="articles.html" class=".nav-link">Articles</a></li>
+        <li><a href="examinations.html" class=".nav-link">Examinations</a></li>
+        <li><a href="mcqs.html" class=".nav-link">MCQs</a></li>
       </ul>
 
       <!-- Right side buttons -->
@@ -100,7 +104,7 @@
       </section>
 
       <!-- Slider part -->
-      <section>
+      <section class="section">
         <div class="slider-container">
           <div id="slider" class="slider"></div>
 
@@ -108,9 +112,72 @@
           <div id="dotsContainer" class="dots"></div>
         </div>
       </section>
+
+      <!-- Upcoming examinations -->
+      <section class="section">
+        <div class="exam-container">
+          <div class="exam-header">
+            <h2>Upcoming Examinations</h2>
+
+            <select id="monthFilter">
+              <option value="all">All Months</option>
+              <option value="January">January</option>
+              <option value="February">February</option>
+              <option value="March">March</option>
+              <option value="April">April</option>
+              <option value="May">May</option>
+              <option value="June">June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+          </div>
+
+          <div id="examList" class="exam-list">
+            <!-- Exam Cards Loaded by JavaScript -->
+          </div>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+      <hr />
+      <hr />
+
+      <div class="footer-upper">
+        <div class="left-half">
+          <h1>Website Logo</h1>
+        </div>
+
+        <div class="right-half">
+          <div class="footer-column">
+            <h4>Sitemap</h4>
+           <a href="index.html">Home Page</a>
+           <a href="articles.html">Articles</a>
+           <a href="examinations.html">Examinations</a>
+           <a href="mcqs.html">MCQs</a>
+          </div>
+
+          <div class="footer-column">
+            <h4>Who we are</h4>
+            <a href="#">About us</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="footer-lower">
+        <p>2025 @ website name LLC</p>
+        <a href="#"><p>Terms & Privacy Policy</p></a>
+      </div>
+    </footer>
     <script src="./js/main.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/exam.js"></script>
   </body>
 </html>
