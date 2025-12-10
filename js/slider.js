@@ -7,7 +7,7 @@ let autoPlayInterval;
 let startX = 0;
 
 /* Load JSON Slide Data */
-const dataUrl = "assets/sliderData/data.json";
+const dataUrl = "assets/articlesData/data.json";
 fetch(dataUrl)
   .then((res) => res.json())
   .then((data) => {

@@ -1,0 +1,5 @@
+[
+  { "image": "assets/articlesData/images/image-1.png", "caption": "Learn & Grow", "description": "You want to achieve something different from others, learn more to grow." },
+  { "image": "assets/articlesData/images/image-2.png", "caption": "Digital Literacy", "description": "Understand the basics of computers, the internet, and digital tools to stay ahead." },
+  { "image": "assets/articlesData/images/image-3.png", "caption": "Web Development", "description": "Start building modern and responsive websites using HTML, CSS, and JavaScript." }
+]
