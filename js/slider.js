@@ -21,6 +21,7 @@ function createSlides() {
   slider.innerHTML = "";
   dotsContainer.innerHTML = "";
   latestSlides = slides.slice(-10);
+  
 
   latestSlides.forEach((item, index) => {
     slider.innerHTML += `

@@ -95,6 +95,14 @@
   </body>
   <script src="./js/main.js"></script>
   <script>
+  function toSlug(text) {
+  return text
+    .toLowerCase()          // lowercase
+    .trim()                 // remove extra spaces
+    .replace(/&/g, 'and')   // replace & with 'and'
+    .replace(/[^a-z0-9 ]/g, '') // remove symbols
+    .replace(/\s+/g, '-');  // replace spaces with hyphens
+}
     // cards detiels
     const cardsPerPage = 24;
     let currentPage = 1;
@@ -123,7 +131,7 @@
       cards.slice(start, end).forEach((item) => {
         cardContainer.innerHTML += `
         <div class="cards-container">
-          <a href="description.html?topic=${item.caption}" class="card-link" >
+          <a href="description/${toSlug(item.caption)}.html" class="card-link" >
           <div class="cards">
            <img src="${item.image}" alt="card's Image" class="card-image" />
            <h3>${item.caption}</h3>
