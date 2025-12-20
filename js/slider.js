@@ -1,8 +1,9 @@
-const slider = document.getElementById("slider");
+  const slidesContainer = document.getElementById("slidesContainer");
 const dotsContainer = document.getElementById("dotsContainer");
 
 let slides = [];
 let currentIndex = 0;
+let currentSlide = 0;
 let autoPlayInterval;
 let startX = 0;
 
@@ -17,22 +18,27 @@ fetch(dataUrl)
   });
 
 /* Create Slides + Dots */
+function toSlug(text) {
+  return text
+    .toLowerCase() // lowercase
+    .trim() // remove extra spaces
+    .replace(/&/g, "and") // replace & with 'and'
+    .replace(/[^a-z0-9 ]/g, "") // remove symbols
+    .replace(/\s+/g, "-"); // replace spaces with hyphens
+}
 function createSlides() {
-  slider.innerHTML = "";
+  slidesContainer.innerHTML = "";
   dotsContainer.innerHTML = "";
   latestSlides = slides.slice(-10);
-  
+ 
 
   latestSlides.forEach((item, index) => {
-    slider.innerHTML += `
-     <a href="description.html?topic=${item.caption}" class="slider-link" >
-      <div class="slide${index === 0 ? " active" : ""}">
-        <img src="${item.image}" />
-        <div class="caption">${item.caption}</div>
-      </div>
-      </a>
+    slidesContainer.innerHTML += `
+    <div class="slide ${index === 0 ? "active" : ""}">
+      <img src="${item.image}" alt="${item.title}" />
+      <div class="caption">${item.caption}</div>
+    </div>
     `;
-
     dotsContainer.innerHTML += `
       <div class="dot ${
         index === 0 ? "active" : ""
@@ -43,8 +49,11 @@ function createSlides() {
 
 /* Show slide by index */
 function goToSlide(index) {
+  let link = document.getElementById("slideLink");
   let slideElements = document.querySelectorAll(".slide");
   let dots = document.querySelectorAll(".dot");
+
+  link.href = `articles/${toSlug(latestSlides[index].caption)}.html`;
 
   slideElements.forEach((s) => s.classList.remove("active"));
   dots.forEach((d) => d.classList.remove("active"));
@@ -64,11 +73,11 @@ function startSlider() {
 }
 
 /* Touch swipe (Mobile) */
-slider.addEventListener("touchstart", (e) => {
+slidesContainer.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
 
-slider.addEventListener("touchend", (e) => {
+slidesContainer.addEventListener("touchend", (e) => {
   let endX = e.changedTouches[0].clientX;
   let difference = startX - endX;
 

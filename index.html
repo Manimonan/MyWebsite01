@@ -106,8 +106,9 @@
       <!-- Slider part -->
       <section class="section">
         <div class="slider-container">
-          <div id="slider" class="slider"></div>
-
+          <a id="slideLink" href="#" class="slider-link">
+          <div id="slidesContainer" class="slider"></div>
+          </a>
           <!-- Slide Indicators -->
           <div id="dotsContainer" class="dots"></div>
         </div>
@@ -118,29 +119,14 @@
         <div class="exam-container">
           <div class="exam-header">
             <h2>Upcoming Examinations</h2>
-
-            <select id="monthFilter">
-              <option value="all">All Months</option>
-              <option value="January">January</option>
-              <option value="February">February</option>
-              <option value="March">March</option>
-              <option value="April">April</option>
-              <option value="May">May</option>
-              <option value="June">June</option>
-              <option value="July">July</option>
-              <option value="August">August</option>
-              <option value="September">September</option>
-              <option value="October">October</option>
-              <option value="November">November</option>
-              <option value="December">December</option>
-            </select>
+             <select id="monthSelect"></select>
           </div>
-
           <div id="examList" class="exam-list">
             <!-- Exam Cards Loaded by JavaScript -->
           </div>
         </div>
       </section>
+      
     </main>
     <footer class="footer">
       <hr />
