@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/examinations/examHome.css" />
     <title>Examinations Page</title>
   </head>
+
   <body>
     <nav class="navbar">
       <!-- Left: Home -->
@@ -45,46 +47,129 @@
       </div>
     </nav>
     <!-- main Contents -->
-   <main>
+    <main>
+      <div class="top-header">
+        <p class="top-header-text">
+          Competitive examinations are standardized tests conducted to assess
+          candidates for admissions, recruitment, and scholarships. These exams
+          evaluate aptitude, subject knowledge, and analytical skills.
+        </p>
+      </div>
+      <div class="container">
+        <div class="heading">
+          <p class="heading-text">Explore Your Examinations</p>
+          <div class="search-box">
+            <span class="search-icon">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" id="searchInput" placeholder="Search examinations..." />
+          </div>
+        </div>
+        <div class="layout">
+          <!-- Left Side -->
+          <aside class="sidebar" id="side-bar">
+            <div class="dropdown-group">
+              <!-- Topic 1 -->
+              <div class="dropdown">
+                <button class="dropdown-btn">
+                  <span class="span1">GOVERNMENT JOB EXAMS</span>
+                  <span class="span2">▾</span>
+                </button>
+                <div class="dropdown-menu">
+                  <div>SSC</div>
+                  <div>Banking</div>
+                  <div>Railway</div>
+                </div>
+              </div>
 
-   </main>
-   <!-- Footer Contents -->
+              <!-- Topic 2 -->
+              <div class="dropdown">
+                <button class="dropdown-btn">
+                  <span class="span1">STATE LEVEL EXAMS</span>
+                  <span class="span2">▾</span>
+                </button>
+                <div class="dropdown-menu">
+                  <div>West Bengal</div>
+                  <div>Maharastra</div>
+                  <div>Odisha</div>
+                  <div>Bihar</div>
+                </div>
+              </div>
+
+              <!-- Topic 3 -->
+              <div class="dropdown">
+                <button class="dropdown-btn">
+                  <span class="span1">ENGINEERING JOB EXAMS</span>
+                  <span class="span2">▾</span>
+                </button>
+                <div class="dropdown-menu">
+                  <div>HAL</div>
+                  <div>BHAL</div>
+                  <div>Opsore</div>
+                  <div>State AE/JE</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <!-- Right Side -->
+          <div class="cards-wrapper">
+            <div class="cards-track" id="cards"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer Contents -->
     <footer>
       <footer class="footer">
-      <hr />
-      <hr />
+        <hr />
+        <hr />
 
-      <div class="footer-upper">
-        <div class="left-half">
-          <h1>Website Logo</h1>
-        </div>
-
-        <div class="right-half">
-          <div class="footer-column">
-            <h4>Sitemap</h4>
-           <a href="index.html">Home Page</a>
-           <a href="articles.html">Articles</a>
-           <a href="examinations.html">Examinations</a>
-           <a href="mcqs.html">MCQs</a>
+        <div class="footer-upper">
+          <div class="left-half">
+            <h1>Website Logo</h1>
           </div>
 
-          <div class="footer-column">
-            <h4>Who we are</h4>
-            <a href="#">About us</a>
-            <a href="#">Careers</a>
-            <a href="#">Privacy</a>
+          <div class="right-half">
+            <div class="footer-column">
+              <h4>Sitemap</h4>
+              <a href="index.html">Home Page</a>
+              <a href="articles.html">Articles</a>
+              <a href="examinations.html">Examinations</a>
+              <a href="mcqs.html">MCQs</a>
+            </div>
+
+            <div class="footer-column">
+              <h4>Who we are</h4>
+              <a href="#">About us</a>
+              <a href="#">Careers</a>
+              <a href="#">Privacy</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <hr />
+        <hr />
 
-      <div class="footer-lower">
-        <p>2025 @ website name LLC</p>
-        <a href="#"><p>Terms & Privacy Policy</p></a>
-      </div>
-    </footer>
+        <div class="footer-lower">
+          <p>2025 @ website name LLC</p>
+          <a href="#">
+            <p>Terms & Privacy Policy</p>
+          </a>
+        </div>
+      </footer>
     </footer>
   </body>
   <script src="./js/main.js"></script>
+  <script src="./js/examinations/examHome.js"></script>
 </html>

@@ -4,7 +4,7 @@ const exams = [
   { title: "Railway Group D", month: 2, date: "05 February 2025" },
   { title: "Bank PO Prelims", month: 3, date: "18 March 2025" },
   { title: "NDA Exam", month: 4, date: "22 April 2025" },
-  { title: "JEE Main Session 2", month: 5, date: "30 April 2025" },
+  { title: "JEE Main Session 2", month: 4, date: "30 April 2025" },
   { title: "NEET Exam", month: 12, date: "05 December 2025" },
   { title: "NET-JRF Examination", month: 12, date: "18 December 2025" },
 ];
