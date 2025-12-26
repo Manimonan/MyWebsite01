@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/footer.css" />
     <link rel="stylesheet" href="./css/examinations/examHome.css" />
+    <link rel="stylesheet" href="./css/examinations/recentExam.css">
     <title>Examinations Page</title>
   </head>
 
@@ -75,6 +76,7 @@
               </svg>
             </span>
             <input type="text" id="searchInput" placeholder="Search examinations..." />
+             <span id="clearSearch" class="clear-btn"> x </span>
           </div>
         </div>
         <div class="layout">
@@ -88,9 +90,9 @@
                   <span class="span2">▾</span>
                 </button>
                 <div class="dropdown-menu">
-                  <div>SSC</div>
-                  <div>Banking</div>
-                  <div>Railway</div>
+                  <div data-category ="ssc">SSC</div>
+                  <div data-category ="banking">Banking</div>
+                  <div data-category ="railway">Railway</div>
                 </div>
               </div>
 
@@ -128,6 +130,12 @@
             <div class="cards-track" id="cards"></div>
           </div>
         </div>
+      </div>
+
+     <!-- Recent Examinations  -->
+      <div class="re-contenar">
+      <p class="re-text">Recent Examinations</p>
+      <div class="recent-exams" id="recentExams"></div>
       </div>
     </main>
     <!-- Footer Contents -->
@@ -172,4 +180,5 @@
   </body>
   <script src="./js/main.js"></script>
   <script src="./js/examinations/examHome.js"></script>
+  <script src="./js/examinations/recentExam.js"></script>
 </html>
