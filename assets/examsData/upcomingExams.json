@@ -1,0 +1,20 @@
+[
+  { "name": "SSC CHSL Tier 1", "title": "ssc-chsl", "month": 6, "year": 2025, "tentativeDate": "10 June 2025" },
+  { "name": "IBPS RRB Officer Scale I", "title": "ibps-rrb-po", "month": 7, "year": 2025, "tentativeDate": "15 July 2025" },
+  { "name": "SSC JE Paper 1", "title": "ssc-je", "month": 8, "year": 2025, "tentativeDate": "22 August 2025" },
+  { "name": "IBPS PO Prelims", "title": "ibps-po", "month": 9, "year": 2025, "tentativeDate": "20 September 2025" },
+  { "name": "RRB Group D CBT", "title": "rrb-group-d", "month": 10, "year": 2025, "tentativeDate": "18 October 2025" },
+  { "name": "UPSC CDS II", "title": "upsc-cds-ii", "month": 11, "year": 2025, "tentativeDate": "14 November 2025" },
+
+  { "name": "SSC GD Constable", "title": "ssc-gd-constable", "month": 12, "year": 2025, "tentativeDate": "16 December 2025" },
+  { "name": "SSC UP Constable", "title": "ssc-gd-constable", "month": 12, "year": 2025, "tentativeDate": "24 December 2025" },
+  { "name": "SSC Je", "title": "ssc-gd-constable", "month": 12, "year": 2025, "tentativeDate": "10 December 2025" },
+
+
+  { "name": "SSC CGL Tier 1", "title": "ssc-cgl", "month": 1, "year": 2026, "tentativeDate": "12 January 2026" },
+  { "name": "UPSC Civil Services Prelims", "title": "upsc-cse-prelims", "month": 2, "year": 2026, "tentativeDate": "21 February 2026" },
+  { "name": "IBPS Clerk Prelims", "title": "ibps-clerk", "month": 3, "year": 2026, "tentativeDate": "14 March 2026" },
+  { "name": "SSC MTS", "title": "ssc-mts", "month": 4, "year": 2026, "tentativeDate": "18 April 2026" },
+  { "name": "RRB NTPC CBT 1", "title": "rrb-ntpc", "month": 5, "year": 2026, "tentativeDate": "20 May 2026" },
+  { "name": "IBPS SO Prelims", "title": "ibps-so", "month": 6, "year": 2026, "tentativeDate": "13 June 2026" }
+]

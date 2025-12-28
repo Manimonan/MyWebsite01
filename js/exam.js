@@ -1,75 +1,69 @@
-// Exam Data (Can be loaded from JSON file)
-const exams = [
-  { title: "SSC CGL Tier 1", month: 1, date: "12 January 2025" },
-  { title: "Railway Group D", month: 2, date: "05 February 2025" },
-  { title: "Bank PO Prelims", month: 3, date: "18 March 2025" },
-  { title: "NDA Exam", month: 4, date: "22 April 2025" },
-  { title: "JEE Main Session 2", month: 4, date: "30 April 2025" },
-  { title: "NEET Exam", month: 12, date: "05 December 2025" },
-  { title: "NET-JRF Examination", month: 12, date: "18 December 2025" },
-];
+const monthFilter = document.getElementById("monthFilter");
+const results = document.getElementById("examList");
+let examData = [];
 
-const monthSelect = document.getElementById("monthSelect");
-const examList = document.getElementById("examList");
+// Fetch exam data
+const filePath = "assets/examsData/upcomingExams.json";
+fetch(filePath)
+  .then((response) => response.json())
+  .then((data) => {
+    examData = data;
+    generateMonthOptions();
+    const [defaultMonth, defaultYear] = monthFilter.value.split("-");
+    filterExams(defaultMonth, defaultYear);
+  })
+  .catch((error) => console.error("Error loading exam data:", error));
 
-// Month names
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+// Generate month options
 
-// Create dropdown options
-monthNames.forEach((m, index) => {
-  const opt = document.createElement("option");
-  opt.value = index + 1;
-  opt.textContent = m;
-  monthSelect.appendChild(opt);
-});
+function generateMonthOptions() {
+  const today = new Date();
+  const currentMonth = today.getMonth();
+  const currentYear = today.getFullYear();
 
-// Auto-select current month
-const currentMonth = new Date().getMonth() + 1;
-monthSelect.value = currentMonth;
-
-// Load exams for current month
-displayExams(currentMonth);
-
-// When user changes month
-monthSelect.addEventListener("change", () => {
-  const selectedMonth = parseInt(monthSelect.value);
-  displayExams(selectedMonth);
-});
-
-// Load Exams in HTML
-function displayExams(month) {
-  examList.innerHTML = "";
-
-  const filteredExams = exams.filter((exam) => exam.month === month);
-
-  if (filteredExams.length === 0) {
-    examList.innerHTML = "<p>No exams scheduled for this month.</p>";
-    return;
-  }
-
-  filteredExams.forEach((exam) => {
-      const card = document.createElement("div");
-      card.className = "exam-card";
-      card.innerHTML = `
-       <div>
-        <div class="exam-title">${exam.title}</div>
-        <div class="exam-date">${exam.date}</div>
-        </div>
-        <button class="details-button">View Details</button>
-      `;
-      examList.appendChild(card);
+  for (let i = -6; i <= 6; i++) {
+    const date = new Date(currentYear, currentMonth + i, 1);
+    const label = date.toLocaleString("default", {
+      month: "long",
+      year: "numeric",
     });
+
+    const option = document.createElement("option");
+    option.value = `${date.getMonth() + 1}-${date.getFullYear()}`;
+    option.textContent = label;
+
+    if (i === 0) option.selected = true;
+
+    monthFilter.appendChild(option);
+  }
 }
+
+// Filter function
+function filterExams(month, year) {
+  const filtered = examData.filter(
+    (item) => item.month === Number(month) && item.year === Number(year)
+  );
+
+  results.innerHTML = filtered.length
+    ? filtered
+        .map(
+          (item) => `
+        <div class="result-card">
+          <div class="result-info">
+           <h3>${item.name}</h3>
+           <p>${item.tentativeDate}</p>
+          </div>
+          <div class="result-desc">
+           <a href="/examinations/${item.title}.html" class="dtl-btn">View Details</a>
+          </div>
+         </div>`
+        )
+        .join("")
+    : `<p>No exams found for this month.</p>`;
+}
+
+// Event Listener
+monthFilter.addEventListener("change", function () {
+  const [month, year] = this.value.split("-");
+  filterExams(month, year);
+});

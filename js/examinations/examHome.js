@@ -88,7 +88,7 @@ function renderExamCards(data) {
     <div class="cards">
     <img src="${exam.imageSrc}" alt="${exam.title}"/>
     <h3>${exam.name}</h3>
-    <a href="#">More Detials</a>
+    <a href="examinations/${exam.title}.html">More Detials</a>
     </div>
     `).join(""): 
     `<p class="no-data">No exams found</p>`;

@@ -21,10 +21,10 @@ function renderRecentExamCards() {
         <p>Application Start Date: ${exam.applicationStartDate}</p>
         <p>Application End Date: ${exam.lastDate}</p>
         </div>
-        <p class="website-link">Visit official website <a src="${exam.officialWebsieLink}">click heare</a></p>
+        <p class="website-link">Visit official website <a href="${exam.officialWebsieLink}" target="blank">click heare</a></p>
         <div class="exam-btns">
-            <a href="${exam.applyLink}" class="apply-btn">Apply Now</a>
-            <a href="${exam.notificationLink}" class="notification-btn">View Notification</a>
+            <a href="${exam.applyLink}" target="blank" class="apply-btn">Apply Now</a>
+            <a href="${exam.notificationLink}" target="blank" class="notification-btn">View Notification</a>
         </div>
       </div>
     `).join("") 
