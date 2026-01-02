@@ -1,0 +1,198 @@
+{
+  "Quantitative Aptitude": {
+    "Arithmetic": [
+      "Numbers",
+      "Percentages",
+      "Ratio & Proportion",
+      "Profit & Loss",
+      "Simple & Compound Interest",
+      "Time & Work",
+      "Time & Distance"
+    ],
+    "Algebra": [
+      "Equations",
+      "Polynomials",
+      "Sequences & Series"
+    ],
+    "Geometry": [
+      "Mensuration",
+      "Lines & Angles",
+      "Triangles",
+      "Quadrilaterals",
+      "Circles"
+    ],
+    "Data Interpretation": [
+      "Table",
+      "Graphs",
+      "Charts"
+    ],
+    "Probability & Statistics": [
+      "Probability & Statistics"
+    ]
+  },
+  "Reasoning Ability": {
+    "Verbal Reasoning": [
+      "Blood Relations",
+      "Syllogism",
+      "Direction Sense",
+      "Coding-Decoding",
+      "Seating Arrangement",
+      "Puzzles"
+    ],
+    "NonVerbal Reasoning": [
+      "Series",
+      "Analogies",
+      "Classification",
+      "Mirror Images",
+      "Paper Folding & Cutting"
+    ],
+    "Logical Reasoning": [
+      "Statement & Assumptions",
+      "Statement & Conclusions",
+      "Course of Action",
+      "Cause & Effect"
+    ]
+  },
+  "English Language": {
+    "Grammar": [
+      "Tenses",
+      "Articles",
+      "Prepositions",
+      "Conjunctions",
+      "Voice",
+      "Narration"
+    ],
+    "Vocabulary": [
+      "Synonyms",
+      "Antonyms",
+      "One Word Substitution",
+      "Idioms & Phrases"
+    ],
+    "Reading Comprehension": [
+      "Passages",
+      "Cloze Test"
+    ],
+    "WritingSkills": [
+      "Error Spotting",
+      "Sentence Improvement",
+      "Para Jumbles"
+    ]
+  },
+  "General Knowledge": {
+    "StaticGK": [
+      "Indian History",
+      "Geography",
+      "Polity",
+      "Art & Culture",
+      "Books & Authors",
+      "Important Days"
+    ],
+    "Current Affairs": [
+      "National",
+      "International",
+      "Sports",
+      "Economy",
+      "Awards",
+      "Science & Tech"
+    ],
+    "GeneralScience": [
+      "Physics",
+      "Chemistry",
+      "Biology"
+    ],
+    "Banking Awareness": [
+      "RBI",
+      "Banking Terms",
+      "Financial Systems"
+    ]
+  },
+  "Computer Knowledge": {
+    "Basics": [
+      "Computer Fundamentals",
+      "Input & Output Devices",
+      "Memory"
+    ],
+    "Software": [
+      "Operating Systems",
+      "MS Office",
+      "Database Management"
+    ],
+    "Internet": [
+      "Networking Basics",
+      "Email",
+      "Cyber Security"
+    ],
+    "Programming": [
+      "C",
+      "Java",
+      "Python",
+      "Data Structures"
+    ]
+  },
+  "Engineering Entrance Exams": {
+    "Civil": [
+      "Strength of Materials",
+      "Structural Analysis",
+      "Surveying"
+    ],
+    "Mechanical": [
+      "Thermodynamics",
+      "Fluid Mechanics",
+      "Machine Design"
+    ],
+    "Electrical": [
+      "Circuit Theory",
+      "Power Systems",
+      "Control Systems"
+    ],
+    "Electronics": [
+      "Digital Electronics",
+      "Analog Circuits",
+      "Communication"
+    ]
+  },
+  "Medical Entrance Exams": {
+    "Biology": [
+      "Botany",
+      "Zoology",
+      "Human Anatomy"
+    ],
+    "Chemistry": [
+      "Organic Chemistry",
+      "Inorganic Chemistry",
+      "Physical Chemistry"
+    ],
+    "Physics": [
+      "Mechanics",
+      "Optics",
+      "Electromagnetism"
+    ],
+    "Aptitude": [
+      "Logical Reasoning",
+      "Quantitative Aptitude",
+      "Verbal Ability"
+    ]
+  },
+  "AE / JE Examinations": {
+    "State Exams": [
+      "Arithmetic",
+      "Algebra",
+      "Geometry",
+      "Data Interpretation"
+    ],
+    "RRB ": [
+      "Logical Reasoning",
+      "Analytical Reasoning"
+    ],
+    "SSC": [
+      "Reading Comprehension",
+      "Grammar",
+      "Vocabulary"
+    ],
+    "DFCCIL": [
+      "Management Concepts",
+      "Economics",
+      "Current Affairs"
+    ]
+  }
+}

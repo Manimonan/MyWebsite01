@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/MCQs/homePage.css" />
     <title>MCQs Page</title>
   </head>
   <body>
@@ -44,12 +45,28 @@
         <button id="hamburger" class="hamburger">☰</button>
       </div>
     </nav>
-   
+    <main>
+      <header class="top-head">
+        <p>Practics Multiple Choice Questions for All Examinations</p>
+      </header>
 
-  
+      <!-- ===== HEADER ===== -->
+      <div class="header" id="categoryTabs"></div>
 
-    <footer>
-      <footer class="footer">
+      <!-- ===== BODY ===== -->
+      <div class="container">
+        <div class="sidebar" id="subjectList"></div>
+        <div class="content">
+          <div class="cards" id="topicCards"></div>
+        </div>
+      </div>
+     <!-- =========== Display MCQs ============= -->
+      <div>
+       
+      </div>
+    </main>
+
+    <footer class="footer">
       <hr />
       <hr />
 
@@ -61,10 +78,10 @@
         <div class="right-half">
           <div class="footer-column">
             <h4>Sitemap</h4>
-           <a href="index.html">Home Page</a>
-           <a href="articles.html">Articles</a>
-           <a href="examinations.html">Examinations</a>
-           <a href="mcqs.html">MCQs</a>
+            <a href="index.html">Home Page</a>
+            <a href="articles.html">Articles</a>
+            <a href="examinations.html">Examinations</a>
+            <a href="mcqs.html">MCQs</a>
           </div>
 
           <div class="footer-column">
@@ -83,7 +100,7 @@
         <a href="#"><p>Terms & Privacy Policy</p></a>
       </div>
     </footer>
-    </footer>
   </body>
   <script src="./js/main.js"></script>
+  <script src="./js/mcqs/topicList.js"></script>
 </html>
