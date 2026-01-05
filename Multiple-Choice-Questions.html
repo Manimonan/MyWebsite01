@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title"></title>
+    <link rel="stylesheet" href="./css/MCQs/qusPage.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body>
+    <header class="mcqHeader">
+      <div class="topic-title">
+        <h1 id="topicName"></h1>
+      </div>
+
+      <div class="mcq-sub-hed">
+        <a class="back-btn" href="/Objective-Questions.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+          <p>Back to MCQs Page</p>
+        </a>
+
+        <div>
+          <button class="toggle-btn" onclick="toggleDarkMode()">
+            🌙 Dark Mode
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========== Display MCQs ============= -->
+    <div class="mcqContainer">
+      <div id="questionBox"></div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </body>
+  <footer class="footer">
+    <hr />
+    <hr />
+
+    <div class="footer-upper">
+      <div class="left-half">
+        <h1>Website Logo</h1>
+      </div>
+
+      <div class="right-half">
+        <div class="footer-column">
+          <h4>Sitemap</h4>
+          <a href="index.html">Home Page</a>
+          <a href="articles.html">Articles</a>
+          <a href="examinations.html">Examinations</a>
+          <a href="Objective-Questions.html">MCQs</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Who we are</h4>
+          <a href="#">About us</a>
+          <a href="#">Careers</a>
+          <a href="#">Privacy</a>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="footer-lower">
+      <p>2025 @ website name LLC</p>
+      <a href="#"><p>Terms & Privacy Policy</p></a>
+    </div>
+  </footer>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const topic = params.get("topicName");
+
+    function formatSlug(text) {
+      return text
+        .replace(/[-,]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .split(" ")
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
+        .join(" ");
+    }
+    // update page title
+    const title = document.getElementById("title");
+    title.innerText = `Objective-Questions of ${formatSlug(topic)}`;
+
+    // udate topic name
+    const topicName = document.getElementById("topicName");
+    topicName.innerText = `Objective Type Questions of ${formatSlug(topic)}`;
+
+    /* =====  mcqs pages with solution ===== */
+
+    let mcqs = [];
+    let currentPage = 1;
+    const QUESTIONS_PER_PAGE = 10;
+
+    //const pageInfo = document.getElementById("pageInfo");
+    const questionBox = document.getElementById("questionBox");
+    const pagination = document.getElementById("pagination");
+
+    /* ===== load mcqs ===== */
+    const filePath = `questionData/${topic}.json`;
+
+    fetch(filePath)
+      .then((res) => res.json())
+      .then((data) => {
+        questions = data;
+        renderQuestion();
+        renderPagination();
+      })
+      .catch((err) => {
+        console.log("No data found", err);
+      });
+
+    function renderQuestion() {
+      questionBox.innerHTML = "";
+
+      const startNo = (currentPage - 1) * QUESTIONS_PER_PAGE;
+      const endNo = startNo + QUESTIONS_PER_PAGE;
+      const pageQuestions = questions.slice(startNo, endNo);
+
+      pageQuestions.forEach((qus, index) => {
+        const qIndex = startNo + index;
+
+        const div = document.createElement("div");
+        div.className = "mcqBox";
+
+        div.innerHTML = `
+            <div class="question">${qIndex + 1}. ${qus.question}</div>
+            <div class="options">
+                ${qus.options
+                  .map(
+                    (opt, i) => `
+                <label>
+                    <input type="radio" name="q${qIndex}" value="${i}"/>
+                    <span id="opt-${qIndex}-${i}">${opt}</span>
+                </label>
+                `
+                  )
+                  .join("")}
+            </div>
+            <div class="btn-wrap">
+            <button onClick="checkAnswer(${qIndex})" class="submit-btn">Submit</button>
+            </div>
+            <div class="solution" id="solution-${qIndex}">
+                      <strong>Solution:</strong>
+                      <div>${qus.solution}</div>
+            </div>
+            `;
+
+        questionBox.appendChild(div);
+      });
+    }
+
+    function checkAnswer(qIndex) {
+      const question = questions[qIndex];
+      const optSelected = document.querySelector(
+        `input[name="q${qIndex}"]:checked`
+      );
+      if (!optSelected) {
+        alert("Please select an option");
+        return;
+      }
+      question.options.forEach((_, i) => {
+        const optSpan = document.getElementById(`opt-${qIndex}-${i}`);
+        optSpan.classList.remove("correct", "wrong");
+
+        if (i === question.answer) optSpan.classList.add("correct");
+        if (i === Number(optSelected.value) && i !== question.answer) {
+          optSpan.classList.add("wrong");
+        }
+      });
+
+      document.getElementById(`solution-${qIndex}`).style.display = "block";
+    }
+
+    function renderPagination() {
+      const totalPages = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
+      const pagination = document.getElementById("pagination");
+      pagination.innerHTML = "";
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement("button");
+        btn.innerText = i;
+        btn.className = i === currentPage ? "active-page" : "";
+        btn.onclick = () => {
+          currentPage = i;
+          renderQuestion();
+          renderPagination();
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        };
+        pagination.appendChild(btn);
+      }
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+</html>

@@ -71,7 +71,7 @@ function renderSubjects(category) {
 function renderTopics(topics) {
   topicCards.innerHTML = "";
  topicCards.innerHTML = topics.map(topic => `
-    <a href="/mcqs/${createSlug(topic)}.html" class="card">
+    <a href="Multiple-Choice-Questions.html?topicName=${createSlug(topic)}" class="card">
       <h3>${topic}</h3>
     </a>
   `).join("");

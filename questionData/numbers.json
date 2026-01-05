@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Which one is a prime number?",
+    "options": [1, 4, 6, 7],
+    "answer": 3
+  },
+  {
+    "question": "Which of the following is an even number?",
+    "options": [3, 7, 9, 12],
+    "answer": 3
+  },
+  {
+    "question": "Which number is a composite number?",
+    "options": [2, 3, 5, 9],
+    "answer": 3
+  },
+  {
+    "question": "What is the smallest prime number?",
+    "options": [1, 2, 3, 5],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is an odd number?",
+    "options": [2, 4, 6, 9],
+    "answer": 3
+  },
+  {
+    "question": "Which number is divisible by 5?",
+    "options": [12, 18, 25, 28],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is not a prime number?",
+    "options": [11, 13, 17, 21],
+    "answer": 3
+  },
+  {
+    "question": "What is the square of 8?",
+    "options": [16, 32, 64, 72],
+    "answer": 2
+  },
+  {
+    "question": "What is the cube of 3?",
+    "options": [6, 9, 18, 27],
+    "answer": 3
+  },
+  {
+    "question": "Which number is divisible by 3?",
+    "options": [10, 14, 21, 25],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is a perfect square?",
+    "options": [12, 20, 25, 30],
+    "answer": 2
+  },
+  {
+    "question": "Which number is divisible by 9?",
+    "options": [27, 28, 29, 31],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following is a multiple of 7?",
+    "options": [20, 28, 30, 36],
+    "answer": 1
+  },
+  {
+    "question": "What is the smallest even number?",
+    "options": [0, 1, 2, 3],
+    "answer": 0
+  },
+  {
+    "question": "Which number is neither prime nor composite?",
+    "options": [1, 2, 3, 4],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following is a prime number?",
+    "options": [15, 21, 29, 35],
+    "answer": 2
+  },
+  {
+    "question": "What is the successor of 99?",
+    "options": [98, 99, 100, 101],
+    "answer": 2
+  },
+  {
+    "question": "Which number is divisible by 10?",
+    "options": [25, 30, 45, 55],
+    "answer": 1
+  },
+  {
+    "question": "What is the predecessor of 1?",
+    "options": [-1, 0, 1, 2],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is a natural number?",
+    "options": [-2, -1, 0, 5],
+    "answer": 3
+  }
+]

@@ -1,0 +1,149 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --page-bg: #fbfbfb;
+  --header-bg:#0a3d62;
+  --text-color: #333;
+  --sec-h2: #0a3d62;
+  --top-border: #27df8f;
+  --btn-bg: #0a3d62;
+  --btn-tex:#e8ecef;
+  --section-bg: #fff;
+}
+.dark {
+  --page-bg: #242323;
+  --text-color: #efe8e8;
+  --sec-h2: #fff;
+  --section-bg: #2b2a2a;
+}
+
+/* ========================= MCQ HEADER STYLING ========================= */
+.mcqHeader{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--header-bg);
+  border-bottom: 3px solid var(--top-border);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.topic-title{
+  height: 120px;
+  display: flex;
+  color: #f1f0f0;
+  align-items: center;
+  justify-content: center;
+}
+.mcq-sub-hed{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: var(--page-bg);
+}
+.back-btn{
+  display: flex;
+  gap: 10px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-weight: 600;
+  align-items: center;
+  text-decoration: none;
+}
+.back-btn:hover{
+  background: #90b6df;
+  padding: 10px;
+  border-radius: 10px;
+}
+.toggle-btn{
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  background: var(--btn-bg);
+  color: var(--btn-tex);
+  border-radius: 10px;
+}
+.toggle-btn:hover{
+  transition: 0.3s ease ;
+}
+/* ========================= MCQ body styling ========================= */
+
+.mcqContainer {
+  background: var(--page-bg);
+  color: var(--text-color);
+ 
+}
+.mcqBox {
+  width: 60%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.question {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.options label {
+  width: 100%;
+  display: block;
+  margin: 10px 10px ;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.correct {
+  
+  background:rgb(51, 176, 51) ;
+  font-weight: bold;
+}
+
+.wrong {
+  background: rgb(180, 40, 40);
+  font-weight: bold;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: flex-end; /* right side */
+}
+
+.submit-btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn:hover {
+  background: #1e40af;
+}
+.solution {
+  background: #eef6ff;
+  padding: 10px;
+  margin-top: 10px;
+  border-left: 4px solid #007bff;
+  display: none;
+}
+
+
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 6px 10px;
+}
+
+.active-page {
+  background: #007bff;
+  color: white;
+}

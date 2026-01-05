@@ -55,7 +55,7 @@ body {
 
 .container {
   display: flex;
-  height: calc(50vh - 60px);
+  height: calc(70vh - 60px);
 }
 
 .sidebar {
